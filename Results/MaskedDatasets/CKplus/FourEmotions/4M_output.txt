@@ -1,0 +1,541 @@
+DB: C
+Device state: cuda
+
+FER on CK+ using GACNN
+
+
+Total included  2585 {0: 601, 1: 801, 2: 345, 3: 838}
+Total included  632 {0: 148, 1: 206, 2: 79, 3: 199}
+Total included  837 {0: 190, 1: 251, 2: 120, 3: 276}
+length of  train Database for training: 2585
+length of  valid Database for validation training: 632
+length of  test Database: 837
+prepare model
++------------------------------------------+------------+
+|                 Modules                  | Parameters |
++------------------------------------------+------------+
+|           module.base.0.weight           |    1728    |
+|            module.base.0.bias            |     64     |
+|           module.base.2.weight           |   36864    |
+|            module.base.2.bias            |     64     |
+|           module.base.5.weight           |   73728    |
+|            module.base.5.bias            |    128     |
+|           module.base.7.weight           |   147456   |
+|            module.base.7.bias            |    128     |
+|          module.base.10.weight           |   294912   |
+|           module.base.10.bias            |    256     |
+|          module.base.12.weight           |   589824   |
+|           module.base.12.bias            |    256     |
+|          module.base.14.weight           |   589824   |
+|           module.base.14.bias            |    256     |
+|          module.base.17.weight           |  1179648   |
+|           module.base.17.bias            |    512     |
+|          module.base.19.weight           |  2359296   |
+|           module.base.19.bias            |    512     |
+| module.local_attention_block.0.1.weight  |   65536    |
+|  module.local_attention_block.0.1.bias   |    128     |
+| module.local_attention_block.0.3.weight  |    128     |
+|  module.local_attention_block.0.3.bias   |    128     |
+| module.local_attention_block.0.5.weight  |   73728    |
+|  module.local_attention_block.0.5.bias   |     64     |
+| module.local_attention_block.0.7.weight  |     64     |
+|  module.local_attention_block.0.7.bias   |     1      |
+| module.local_attention_block.1.1.weight  |   65536    |
+|  module.local_attention_block.1.1.bias   |    128     |
+| module.local_attention_block.1.3.weight  |    128     |
+|  module.local_attention_block.1.3.bias   |    128     |
+| module.local_attention_block.1.5.weight  |   73728    |
+|  module.local_attention_block.1.5.bias   |     64     |
+| module.local_attention_block.1.7.weight  |     64     |
+|  module.local_attention_block.1.7.bias   |     1      |
+| module.local_attention_block.2.1.weight  |   65536    |
+|  module.local_attention_block.2.1.bias   |    128     |
+| module.local_attention_block.2.3.weight  |    128     |
+|  module.local_attention_block.2.3.bias   |    128     |
+| module.local_attention_block.2.5.weight  |   73728    |
+|  module.local_attention_block.2.5.bias   |     64     |
+| module.local_attention_block.2.7.weight  |     64     |
+|  module.local_attention_block.2.7.bias   |     1      |
+| module.local_attention_block.3.1.weight  |   65536    |
+|  module.local_attention_block.3.1.bias   |    128     |
+| module.local_attention_block.3.3.weight  |    128     |
+|  module.local_attention_block.3.3.bias   |    128     |
+| module.local_attention_block.3.5.weight  |   73728    |
+|  module.local_attention_block.3.5.bias   |     64     |
+| module.local_attention_block.3.7.weight  |     64     |
+|  module.local_attention_block.3.7.bias   |     1      |
+| module.local_attention_block.4.1.weight  |   65536    |
+|  module.local_attention_block.4.1.bias   |    128     |
+| module.local_attention_block.4.3.weight  |    128     |
+|  module.local_attention_block.4.3.bias   |    128     |
+| module.local_attention_block.4.5.weight  |   73728    |
+|  module.local_attention_block.4.5.bias   |     64     |
+| module.local_attention_block.4.7.weight  |     64     |
+|  module.local_attention_block.4.7.bias   |     1      |
+| module.local_attention_block.5.1.weight  |   65536    |
+|  module.local_attention_block.5.1.bias   |    128     |
+| module.local_attention_block.5.3.weight  |    128     |
+|  module.local_attention_block.5.3.bias   |    128     |
+| module.local_attention_block.5.5.weight  |   73728    |
+|  module.local_attention_block.5.5.bias   |     64     |
+| module.local_attention_block.5.7.weight  |     64     |
+|  module.local_attention_block.5.7.bias   |     1      |
+| module.local_attention_block.6.1.weight  |   65536    |
+|  module.local_attention_block.6.1.bias   |    128     |
+| module.local_attention_block.6.3.weight  |    128     |
+|  module.local_attention_block.6.3.bias   |    128     |
+| module.local_attention_block.6.5.weight  |   73728    |
+|  module.local_attention_block.6.5.bias   |     64     |
+| module.local_attention_block.6.7.weight  |     64     |
+|  module.local_attention_block.6.7.bias   |     1      |
+| module.local_attention_block.7.1.weight  |   65536    |
+|  module.local_attention_block.7.1.bias   |    128     |
+| module.local_attention_block.7.3.weight  |    128     |
+|  module.local_attention_block.7.3.bias   |    128     |
+| module.local_attention_block.7.5.weight  |   73728    |
+|  module.local_attention_block.7.5.bias   |     64     |
+| module.local_attention_block.7.7.weight  |     64     |
+|  module.local_attention_block.7.7.bias   |     1      |
+| module.local_attention_block.8.1.weight  |   65536    |
+|  module.local_attention_block.8.1.bias   |    128     |
+| module.local_attention_block.8.3.weight  |    128     |
+|  module.local_attention_block.8.3.bias   |    128     |
+| module.local_attention_block.8.5.weight  |   73728    |
+|  module.local_attention_block.8.5.bias   |     64     |
+| module.local_attention_block.8.7.weight  |     64     |
+|  module.local_attention_block.8.7.bias   |     1      |
+| module.local_attention_block.9.1.weight  |   65536    |
+|  module.local_attention_block.9.1.bias   |    128     |
+| module.local_attention_block.9.3.weight  |    128     |
+|  module.local_attention_block.9.3.bias   |    128     |
+| module.local_attention_block.9.5.weight  |   73728    |
+|  module.local_attention_block.9.5.bias   |     64     |
+| module.local_attention_block.9.7.weight  |     64     |
+|  module.local_attention_block.9.7.bias   |     1      |
+| module.local_attention_block.10.1.weight |   65536    |
+|  module.local_attention_block.10.1.bias  |    128     |
+| module.local_attention_block.10.3.weight |    128     |
+|  module.local_attention_block.10.3.bias  |    128     |
+| module.local_attention_block.10.5.weight |   73728    |
+|  module.local_attention_block.10.5.bias  |     64     |
+| module.local_attention_block.10.7.weight |     64     |
+|  module.local_attention_block.10.7.bias  |     1      |
+| module.local_attention_block.11.1.weight |   65536    |
+|  module.local_attention_block.11.1.bias  |    128     |
+| module.local_attention_block.11.3.weight |    128     |
+|  module.local_attention_block.11.3.bias  |    128     |
+| module.local_attention_block.11.5.weight |   73728    |
+|  module.local_attention_block.11.5.bias  |     64     |
+| module.local_attention_block.11.7.weight |     64     |
+|  module.local_attention_block.11.7.bias  |     1      |
+| module.local_attention_block.12.1.weight |   65536    |
+|  module.local_attention_block.12.1.bias  |    128     |
+| module.local_attention_block.12.3.weight |    128     |
+|  module.local_attention_block.12.3.bias  |    128     |
+| module.local_attention_block.12.5.weight |   73728    |
+|  module.local_attention_block.12.5.bias  |     64     |
+| module.local_attention_block.12.7.weight |     64     |
+|  module.local_attention_block.12.7.bias  |     1      |
+| module.local_attention_block.13.1.weight |   65536    |
+|  module.local_attention_block.13.1.bias  |    128     |
+| module.local_attention_block.13.3.weight |    128     |
+|  module.local_attention_block.13.3.bias  |    128     |
+| module.local_attention_block.13.5.weight |   73728    |
+|  module.local_attention_block.13.5.bias  |     64     |
+| module.local_attention_block.13.7.weight |     64     |
+|  module.local_attention_block.13.7.bias  |     1      |
+| module.local_attention_block.14.1.weight |   65536    |
+|  module.local_attention_block.14.1.bias  |    128     |
+| module.local_attention_block.14.3.weight |    128     |
+|  module.local_attention_block.14.3.bias  |    128     |
+| module.local_attention_block.14.5.weight |   73728    |
+|  module.local_attention_block.14.5.bias  |     64     |
+| module.local_attention_block.14.7.weight |     64     |
+|  module.local_attention_block.14.7.bias  |     1      |
+| module.local_attention_block.15.1.weight |   65536    |
+|  module.local_attention_block.15.1.bias  |    128     |
+| module.local_attention_block.15.3.weight |    128     |
+|  module.local_attention_block.15.3.bias  |    128     |
+| module.local_attention_block.15.5.weight |   73728    |
+|  module.local_attention_block.15.5.bias  |     64     |
+| module.local_attention_block.15.7.weight |     64     |
+|  module.local_attention_block.15.7.bias  |     1      |
+| module.local_attention_block.16.1.weight |   65536    |
+|  module.local_attention_block.16.1.bias  |    128     |
+| module.local_attention_block.16.3.weight |    128     |
+|  module.local_attention_block.16.3.bias  |    128     |
+| module.local_attention_block.16.5.weight |   73728    |
+|  module.local_attention_block.16.5.bias  |     64     |
+| module.local_attention_block.16.7.weight |     64     |
+|  module.local_attention_block.16.7.bias  |     1      |
+| module.local_attention_block.17.1.weight |   65536    |
+|  module.local_attention_block.17.1.bias  |    128     |
+| module.local_attention_block.17.3.weight |    128     |
+|  module.local_attention_block.17.3.bias  |    128     |
+| module.local_attention_block.17.5.weight |   73728    |
+|  module.local_attention_block.17.5.bias  |     64     |
+| module.local_attention_block.17.7.weight |     64     |
+|  module.local_attention_block.17.7.bias  |     1      |
+| module.local_attention_block.18.1.weight |   65536    |
+|  module.local_attention_block.18.1.bias  |    128     |
+| module.local_attention_block.18.3.weight |    128     |
+|  module.local_attention_block.18.3.bias  |    128     |
+| module.local_attention_block.18.5.weight |   73728    |
+|  module.local_attention_block.18.5.bias  |     64     |
+| module.local_attention_block.18.7.weight |     64     |
+|  module.local_attention_block.18.7.bias  |     1      |
+| module.local_attention_block.19.1.weight |   65536    |
+|  module.local_attention_block.19.1.bias  |    128     |
+| module.local_attention_block.19.3.weight |    128     |
+|  module.local_attention_block.19.3.bias  |    128     |
+| module.local_attention_block.19.5.weight |   73728    |
+|  module.local_attention_block.19.5.bias  |     64     |
+| module.local_attention_block.19.7.weight |     64     |
+|  module.local_attention_block.19.7.bias  |     1      |
+|  module.global_attention_block.1.weight  |   65536    |
+|   module.global_attention_block.1.bias   |    128     |
+|  module.global_attention_block.3.weight  |    128     |
+|   module.global_attention_block.3.bias   |    128     |
+|  module.global_attention_block.5.weight  |   401408   |
+|   module.global_attention_block.5.bias   |     64     |
+|  module.global_attention_block.7.weight  |     64     |
+|   module.global_attention_block.7.bias   |     1      |
+|       module.PG_unit_1.0.0.weight        |  2359296   |
+|        module.PG_unit_1.0.0.bias         |    512     |
+|       module.PG_unit_1.1.0.weight        |  2359296   |
+|        module.PG_unit_1.1.0.bias         |    512     |
+|       module.PG_unit_1.2.0.weight        |  2359296   |
+|        module.PG_unit_1.2.0.bias         |    512     |
+|       module.PG_unit_1.3.0.weight        |  2359296   |
+|        module.PG_unit_1.3.0.bias         |    512     |
+|       module.PG_unit_1.4.0.weight        |  2359296   |
+|        module.PG_unit_1.4.0.bias         |    512     |
+|       module.PG_unit_1.5.0.weight        |  2359296   |
+|        module.PG_unit_1.5.0.bias         |    512     |
+|       module.PG_unit_1.6.0.weight        |  2359296   |
+|        module.PG_unit_1.6.0.bias         |    512     |
+|       module.PG_unit_1.7.0.weight        |  2359296   |
+|        module.PG_unit_1.7.0.bias         |    512     |
+|       module.PG_unit_1.8.0.weight        |  2359296   |
+|        module.PG_unit_1.8.0.bias         |    512     |
+|       module.PG_unit_1.9.0.weight        |  2359296   |
+|        module.PG_unit_1.9.0.bias         |    512     |
+|       module.PG_unit_1.10.0.weight       |  2359296   |
+|        module.PG_unit_1.10.0.bias        |    512     |
+|       module.PG_unit_1.11.0.weight       |  2359296   |
+|        module.PG_unit_1.11.0.bias        |    512     |
+|       module.PG_unit_1.12.0.weight       |  2359296   |
+|        module.PG_unit_1.12.0.bias        |    512     |
+|       module.PG_unit_1.13.0.weight       |  2359296   |
+|        module.PG_unit_1.13.0.bias        |    512     |
+|       module.PG_unit_1.14.0.weight       |  2359296   |
+|        module.PG_unit_1.14.0.bias        |    512     |
+|       module.PG_unit_1.15.0.weight       |  2359296   |
+|        module.PG_unit_1.15.0.bias        |    512     |
+|       module.PG_unit_1.16.0.weight       |  2359296   |
+|        module.PG_unit_1.16.0.bias        |    512     |
+|       module.PG_unit_1.17.0.weight       |  2359296   |
+|        module.PG_unit_1.17.0.bias        |    512     |
+|       module.PG_unit_1.18.0.weight       |  2359296   |
+|        module.PG_unit_1.18.0.bias        |    512     |
+|       module.PG_unit_1.19.0.weight       |  2359296   |
+|        module.PG_unit_1.19.0.bias        |    512     |
+|       module.PG_unit_2.0.1.weight        |  1179648   |
+|        module.PG_unit_2.0.1.bias         |     64     |
+|       module.PG_unit_2.1.1.weight        |  1179648   |
+|        module.PG_unit_2.1.1.bias         |     64     |
+|       module.PG_unit_2.2.1.weight        |  1179648   |
+|        module.PG_unit_2.2.1.bias         |     64     |
+|       module.PG_unit_2.3.1.weight        |  1179648   |
+|        module.PG_unit_2.3.1.bias         |     64     |
+|       module.PG_unit_2.4.1.weight        |  1179648   |
+|        module.PG_unit_2.4.1.bias         |     64     |
+|       module.PG_unit_2.5.1.weight        |  1179648   |
+|        module.PG_unit_2.5.1.bias         |     64     |
+|       module.PG_unit_2.6.1.weight        |  1179648   |
+|        module.PG_unit_2.6.1.bias         |     64     |
+|       module.PG_unit_2.7.1.weight        |  1179648   |
+|        module.PG_unit_2.7.1.bias         |     64     |
+|       module.PG_unit_2.8.1.weight        |  1179648   |
+|        module.PG_unit_2.8.1.bias         |     64     |
+|       module.PG_unit_2.9.1.weight        |  1179648   |
+|        module.PG_unit_2.9.1.bias         |     64     |
+|       module.PG_unit_2.10.1.weight       |  1179648   |
+|        module.PG_unit_2.10.1.bias        |     64     |
+|       module.PG_unit_2.11.1.weight       |  1179648   |
+|        module.PG_unit_2.11.1.bias        |     64     |
+|       module.PG_unit_2.12.1.weight       |  1179648   |
+|        module.PG_unit_2.12.1.bias        |     64     |
+|       module.PG_unit_2.13.1.weight       |  1179648   |
+|        module.PG_unit_2.13.1.bias        |     64     |
+|       module.PG_unit_2.14.1.weight       |  1179648   |
+|        module.PG_unit_2.14.1.bias        |     64     |
+|       module.PG_unit_2.15.1.weight       |  1179648   |
+|        module.PG_unit_2.15.1.bias        |     64     |
+|       module.PG_unit_2.16.1.weight       |  1179648   |
+|        module.PG_unit_2.16.1.bias        |     64     |
+|       module.PG_unit_2.17.1.weight       |  1179648   |
+|        module.PG_unit_2.17.1.bias        |     64     |
+|       module.PG_unit_2.18.1.weight       |  1179648   |
+|        module.PG_unit_2.18.1.bias        |     64     |
+|       module.PG_unit_2.19.1.weight       |  1179648   |
+|        module.PG_unit_2.19.1.bias        |     64     |
+|        module.GG_unit_1.1.weight         |  2359296   |
+|         module.GG_unit_1.1.bias          |    512     |
+|        module.GG_unit_2.1.weight         |  51380224  |
+|         module.GG_unit_2.1.bias          |    512     |
+|            module.fc1.weight             |   917504   |
+|             module.fc1.bias              |    512     |
+|            module.fc2.weight             |    3584    |
+|             module.fc2.bias              |     7      |
++------------------------------------------+------------+
+Total Trainable Params: 133991004
+Training starting:
+
+Training Epoch: [0][0/258]	Time  (5.364078044891357)	Data (1.767979383468628)	loss  (1.3975847959518433)	Prec1  (0.0) 	
+Training Epoch: [0][100/258]	Time  (0.24516104471565472)	Data (0.018002798061559695)	loss  (1.1290160789348112)	Prec1  (48.21782302856445) 	
+Training Epoch: [0][200/258]	Time  (0.21876158643124707)	Data (0.009202806510735507)	loss  (0.8939155010293373)	Prec1  (61.69154357910156) 	
+The current loss: 24
+The Last loss:  1000
+
+******************************
+	Adjusted learning rate: 1
+
+0.00095
+Training Epoch: [1][0/258]	Time  (1.7437355518341064)	Data (1.5325164794921875)	loss  (0.30837926268577576)	Prec1  (90.0) 	
+Training Epoch: [1][100/258]	Time  (0.20751619575047256)	Data (0.01548318343587441)	loss  (0.4126904518297403)	Prec1  (85.3465347290039) 	
+Training Epoch: [1][200/258]	Time  (0.19831624908826836)	Data (0.008121903262921233)	loss  (0.36933158642487296)	Prec1  (86.16915893554688) 	
+The current loss: 21
+The Last loss:  24
+
+******************************
+	Adjusted learning rate: 2
+
+0.0009025
+Training Epoch: [2][0/258]	Time  (2.0941596031188965)	Data (1.7495458126068115)	loss  (0.29402250051498413)	Prec1  (90.0) 	
+Training Epoch: [2][100/258]	Time  (0.20389308315692561)	Data (0.018013309724260084)	loss  (0.2886053473679441)	Prec1  (88.71287536621094) 	
+Training Epoch: [2][200/258]	Time  (0.19157119651338947)	Data (0.009187781395603768)	loss  (0.24231669629706226)	Prec1  (90.54727172851562) 	
+The current loss: 19
+The Last loss:  21
+
+******************************
+	Adjusted learning rate: 3
+
+0.000857375
+Training Epoch: [3][0/258]	Time  (2.0111443996429443)	Data (1.686126708984375)	loss  (0.02480650134384632)	Prec1  (100.0) 	
+Training Epoch: [3][100/258]	Time  (0.2109874404302918)	Data (0.01701733145383325)	loss  (0.19731087290156302)	Prec1  (92.77227783203125) 	
+Training Epoch: [3][200/258]	Time  (0.1963028812882912)	Data (0.008765342816784608)	loss  (0.1991669005061041)	Prec1  (92.53731536865234) 	
+The current loss: 13
+The Last loss:  19
+
+******************************
+	Adjusted learning rate: 4
+
+0.0008145062499999999
+Training Epoch: [4][0/258]	Time  (1.983461618423462)	Data (1.7594103813171387)	loss  (0.12375357002019882)	Prec1  (90.0) 	
+Training Epoch: [4][100/258]	Time  (0.19996428961801058)	Data (0.017682762429265694)	loss  (0.12504188134623137)	Prec1  (95.14852142333984) 	
+Training Epoch: [4][200/258]	Time  (0.18691757780995535)	Data (0.009092846913124198)	loss  (0.12508637809214315)	Prec1  (95.22388458251953) 	
+The current loss: 11
+The Last loss:  13
+
+******************************
+	Adjusted learning rate: 5
+
+0.0007737809374999998
+Training Epoch: [5][0/258]	Time  (1.7714147567749023)	Data (1.5266287326812744)	loss  (0.19011951982975006)	Prec1  (90.0) 	
+Training Epoch: [5][100/258]	Time  (0.19847272646309125)	Data (0.015389975934925646)	loss  (0.1243090254662669)	Prec1  (95.24752807617188) 	
+Training Epoch: [5][200/258]	Time  (0.1934116313706583)	Data (0.007875922900527271)	loss  (0.11699811222474206)	Prec1  (95.47264099121094) 	
+The current loss: 10
+The Last loss:  11
+
+******************************
+	Adjusted learning rate: 6
+
+0.0007350918906249997
+Training Epoch: [6][0/258]	Time  (1.7272865772247314)	Data (1.5177404880523682)	loss  (0.004893090575933456)	Prec1  (100.0) 	
+Training Epoch: [6][100/258]	Time  (0.20321499711216087)	Data (0.015277092999751024)	loss  (0.09268521096892793)	Prec1  (97.02970886230469) 	
+Training Epoch: [6][200/258]	Time  (0.19377892052949364)	Data (0.007871120130244772)	loss  (0.08492803439781457)	Prec1  (96.96517944335938) 	
+The current loss: 10
+The Last loss:  10
+trigger times: 1
+
+******************************
+	Adjusted learning rate: 7
+
+0.0006983372960937497
+Training Epoch: [7][0/258]	Time  (2.1452717781066895)	Data (1.7992839813232422)	loss  (0.144539937376976)	Prec1  (100.0) 	
+Training Epoch: [7][100/258]	Time  (0.2132676355909593)	Data (0.018135488623439677)	loss  (0.07140126092835458)	Prec1  (97.02970886230469) 	
+Training Epoch: [7][200/258]	Time  (0.19772308738670538)	Data (0.009249324229226183)	loss  (0.06371538756419302)	Prec1  (97.4129409790039) 	
+The current loss: 7
+The Last loss:  10
+
+******************************
+	Adjusted learning rate: 8
+
+0.0006634204312890621
+Training Epoch: [8][0/258]	Time  (2.147883892059326)	Data (1.8980317115783691)	loss  (0.13752809166908264)	Prec1  (90.0) 	
+Training Epoch: [8][100/258]	Time  (0.2044272233944128)	Data (0.019070056405397925)	loss  (0.043855589614215186)	Prec1  (98.51485443115234) 	
+Training Epoch: [8][200/258]	Time  (0.18493564686371913)	Data (0.009728489823602325)	loss  (0.0457473984223277)	Prec1  (98.30846405029297) 	
+The current loss: 6
+The Last loss:  7
+
+******************************
+	Adjusted learning rate: 9
+
+0.000630249409724609
+Training Epoch: [9][0/258]	Time  (1.9960198402404785)	Data (1.8165018558502197)	loss  (0.10847514867782593)	Prec1  (100.0) 	
+Training Epoch: [9][100/258]	Time  (0.1830584223907773)	Data (0.018194578661777004)	loss  (0.0617680119492902)	Prec1  (97.92079162597656) 	
+Training Epoch: [9][200/258]	Time  (0.17376665570842686)	Data (0.009252356059515654)	loss  (0.039037867997852915)	Prec1  (98.70647430419922) 	
+The current loss: 9
+The Last loss:  6
+trigger times: 2
+
+******************************
+	Adjusted learning rate: 10
+
+0.0005987369392383785
+Training Epoch: [10][0/258]	Time  (1.9546830654144287)	Data (1.763810396194458)	loss  (3.258952347096056e-05)	Prec1  (100.0) 	
+Training Epoch: [10][100/258]	Time  (0.18069358627394874)	Data (0.01766472051639368)	loss  (0.03134611721105841)	Prec1  (98.91089630126953) 	
+Training Epoch: [10][200/258]	Time  (0.17200128237406412)	Data (0.008978022864801967)	loss  (0.026038224301916685)	Prec1  (99.3034896850586) 	
+The current loss: 6
+The Last loss:  9
+
+******************************
+	Adjusted learning rate: 11
+
+0.0005688000922764595
+Training Epoch: [11][0/258]	Time  (1.9250476360321045)	Data (1.7404148578643799)	loss  (0.006981345824897289)	Prec1  (100.0) 	
+Training Epoch: [11][100/258]	Time  (0.17813507401117004)	Data (0.01743791363026836)	loss  (0.02228165739590019)	Prec1  (99.40594482421875) 	
+Training Epoch: [11][200/258]	Time  (0.16935362151606165)	Data (0.008867681322999262)	loss  (0.024140098119741833)	Prec1  (99.20398712158203) 	
+The current loss: 7
+The Last loss:  6
+trigger times: 3
+
+******************************
+	Adjusted learning rate: 12
+
+0.0005403600876626365
+Training Epoch: [12][0/258]	Time  (1.8664462566375732)	Data (1.6471953392028809)	loss  (0.004175002686679363)	Prec1  (100.0) 	
+Training Epoch: [12][100/258]	Time  (0.1802303673017143)	Data (0.01651426353076897)	loss  (0.023182714877302623)	Prec1  (99.60396575927734) 	
+Training Epoch: [12][200/258]	Time  (0.17232097322074927)	Data (0.008399896953829485)	loss  (0.01917159484340421)	Prec1  (99.45274353027344) 	
+The current loss: 3
+The Last loss:  7
+
+******************************
+	Adjusted learning rate: 13
+
+0.0005133420832795047
+Training Epoch: [13][0/258]	Time  (1.9141602516174316)	Data (1.7189216613769531)	loss  (0.010572764091193676)	Prec1  (100.0) 	
+Training Epoch: [13][100/258]	Time  (0.18034871025840835)	Data (0.01721665410712214)	loss  (0.00988661550267091)	Prec1  (99.70297241210938) 	
+Training Epoch: [13][200/258]	Time  (0.17202708851638718)	Data (0.008753048246772728)	loss  (0.009169343728604302)	Prec1  (99.70149993896484) 	
+The current loss: 4
+The Last loss:  3
+trigger times: 4
+
+******************************
+	Adjusted learning rate: 14
+
+0.00048767497911552944
+Training Epoch: [14][0/258]	Time  (1.8596487045288086)	Data (1.656750202178955)	loss  (0.002288584364578128)	Prec1  (100.0) 	
+Training Epoch: [14][100/258]	Time  (0.17967936544135066)	Data (0.016608257104854772)	loss  (0.010312771502633563)	Prec1  (99.50495147705078) 	
+Training Epoch: [14][200/258]	Time  (0.17201103499872766)	Data (0.008446867786236663)	loss  (0.00859322296401951)	Prec1  (99.60199737548828) 	
+The current loss: 4
+The Last loss:  4
+trigger times: 5
+
+******************************
+	Adjusted learning rate: 15
+
+0.00046329123015975297
+Training Epoch: [15][0/258]	Time  (1.917025089263916)	Data (1.697331428527832)	loss  (0.08290056884288788)	Prec1  (90.0) 	
+Training Epoch: [15][100/258]	Time  (0.18180613234491633)	Data (0.017015320239680828)	loss  (0.0068625234029070165)	Prec1  (99.80198669433594) 	
+Training Epoch: [15][200/258]	Time  (0.17340600787110588)	Data (0.008654073696231368)	loss  (0.0063201493484064996)	Prec1  (99.8010025024414) 	
+The current loss: 3
+The Last loss:  4
+
+******************************
+	Adjusted learning rate: 16
+
+0.0004401266686517653
+Training Epoch: [16][0/258]	Time  (1.918663501739502)	Data (1.7398483753204346)	loss  (0.003471339587122202)	Prec1  (100.0) 	
+Training Epoch: [16][100/258]	Time  (0.17384408016015987)	Data (0.017421656315869623)	loss  (0.002612797923490077)	Prec1  (99.90099334716797) 	
+Training Epoch: [16][200/258]	Time  (0.16769691249031332)	Data (0.008847598412736732)	loss  (0.0030043954683518954)	Prec1  (99.90050506591797) 	
+The current loss: 4
+The Last loss:  3
+trigger times: 6
+
+******************************
+	Adjusted learning rate: 17
+
+0.00041812033521917703
+Training Epoch: [17][0/258]	Time  (1.877842903137207)	Data (1.673466444015503)	loss  (0.006280998699367046)	Prec1  (100.0) 	
+Training Epoch: [17][100/258]	Time  (0.1791041652754982)	Data (0.016768519241030854)	loss  (0.0023162082291550783)	Prec1  (100.0) 	
+Training Epoch: [17][200/258]	Time  (0.17028379796156243)	Data (0.0085264189326348)	loss  (0.007390280678796277)	Prec1  (99.85075378417969) 	
+The current loss: 3
+The Last loss:  4
+
+******************************
+	Adjusted learning rate: 18
+
+0.00039721431845821814
+Training Epoch: [18][0/258]	Time  (1.912722110748291)	Data (1.7209913730621338)	loss  (0.0008770237909629941)	Prec1  (100.0) 	
+Training Epoch: [18][100/258]	Time  (0.18164461910134494)	Data (0.017253727015882434)	loss  (0.015557118934256917)	Prec1  (99.60396575927734) 	
+Training Epoch: [18][200/258]	Time  (0.17259032453470563)	Data (0.008775679033194015)	loss  (0.00925381150371173)	Prec1  (99.75125122070312) 	
+The current loss: 3
+The Last loss:  3
+trigger times: 7
+
+******************************
+	Adjusted learning rate: 19
+
+0.0003773536025353072
+Training Epoch: [19][0/258]	Time  (1.8756191730499268)	Data (1.6730985641479492)	loss  (0.09518098831176758)	Prec1  (100.0) 	
+Training Epoch: [19][100/258]	Time  (0.17480849983668564)	Data (0.01674365761256454)	loss  (0.0035921738900168126)	Prec1  (99.90099334716797) 	
+Training Epoch: [19][200/258]	Time  (0.16782372745115365)	Data (0.008503210485278077)	loss  (0.004352213353061339)	Prec1  (99.85075378417969) 	
+The current loss: 5
+The Last loss:  3
+trigger times: 8
+
+******************************
+	Adjusted learning rate: 20
+
+0.0003584859224085418
+Training Epoch: [20][0/258]	Time  (1.903982400894165)	Data (1.7057337760925293)	loss  (4.489019556785934e-05)	Prec1  (100.0) 	
+Training Epoch: [20][100/258]	Time  (0.1762068790964561)	Data (0.01707892134638116)	loss  (0.002032523198513535)	Prec1  (100.0) 	
+Training Epoch: [20][200/258]	Time  (0.17066088126073428)	Data (0.008683075359211633)	loss  (0.001580517871447843)	Prec1  (100.00000762939453) 	
+The current loss: 2
+The Last loss:  5
+
+******************************
+	Adjusted learning rate: 21
+
+0.0003405616262881147
+Training Epoch: [21][0/258]	Time  (1.989225149154663)	Data (1.7867236137390137)	loss  (6.651035801041871e-05)	Prec1  (100.0) 	
+Training Epoch: [21][100/258]	Time  (0.1760875163692059)	Data (0.017880206060881663)	loss  (0.0009548364452491502)	Prec1  (100.0) 	
+Training Epoch: [21][200/258]	Time  (0.1717791284494732)	Data (0.00908834780033548)	loss  (0.0008620930975426646)	Prec1  (100.00000762939453) 	
+The current loss: 2
+The Last loss:  2
+trigger times: 9
+
+******************************
+	Adjusted learning rate: 22
+
+0.00032353354497370894
+Training Epoch: [22][0/258]	Time  (1.9914512634277344)	Data (1.8164167404174805)	loss  (0.00022574821196030825)	Prec1  (100.0) 	
+Training Epoch: [22][100/258]	Time  (0.18133700011980416)	Data (0.018165597821226214)	loss  (0.00046306399783256803)	Prec1  (100.0) 	
+Training Epoch: [22][200/258]	Time  (0.17194183074419772)	Data (0.009228953081576978)	loss  (0.0004615312409694794)	Prec1  (100.00000762939453) 	
+The current loss: 3
+The Last loss:  2
+trigger times: 10
+Early stopping!
+Start to test process.
+Testing started
+Testing Epoch: [22][0/168]	Time  (1.995413064956665)	Data (1.5992238521575928)	loss  (1.8929626094177365e-05)	Prec1  (100.0) 	
+Testing Epoch: [22][100/168]	Time  (0.08315618203418089)	Data (0.01658060054967899)	loss  (0.04957214539376426)	Prec1  (98.01980590820312) 	
+Testing Epoch: [22][167/168]	Time  (0.0762261776697068)	Data (0.010243750753856841)	loss  (0.04557779422424085)	Prec1  (98.2078857421875) 	
+tensor([[185.,   0.,   3.,   2.],
+        [  0., 249.,   1.,   1.],
+        [  4.,   0., 116.,   0.],
+        [  1.,   1.,   2., 272.]])
+tensor([0.9737, 0.9920, 0.9667, 0.9855])
+Epoch: 22   Test Acc: 98.2078857421875
