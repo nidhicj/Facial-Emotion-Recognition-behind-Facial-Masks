@@ -1,0 +1,109 @@
+The following scripts are needed for to train the model on the respective datasets using main_trainer.py file:
+
+usage: main_trainer.py [-h] [--root_path ROOT_PATH] [--DB DB] [--main_folder MAIN_FOLDER] [--title TITLE] [-j N]
+                       [--epochs N] [--start-epoch N] [-b N] [-b_t N] [--lr LR] [--momentum M] [--weight-decay W]
+                       [--print-freq N] [--resume PATH] [-e] [--model_dir MODEL_DIR] [--train_list TRAIN_LIST]
+                       [--valid_list VALID_LIST] [--test_list TEST_LIST]
+                       [--train_landmarksfile TRAIN_LANDMARKSFILE] [--test_landmarksfile TEST_LANDMARKSFILE]
+                       [--imagesize IMAGESIZE] [--end2end END2END] [--num_classes NUM_CLASSES]
+                       [--num_regions NUM_REGIONS]
+
+PyTorch AffectNet Training using novel attention+region branches
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --root_path ROOT_PATH
+                        path to root path of images
+  --DB DB               Which Database for train. (Flatcam, FERPLUS)
+  --main_folder MAIN_FOLDER
+                        where to save the docs
+  --title TITLE         title for the graph
+  -j N, --workers N     number of data loading workers (default: 4)
+  --epochs N            number of total epochs to run
+  --start-epoch N       manual epoch number (useful on restarts)
+  -b N, --batch-size N  mini-batch size (default: 256)
+  -b_t N, --batch-size_t N
+                        mini-batch size (default: 256)
+  --lr LR, --learning-rate LR
+                        initial learning rate
+  --momentum M          momentum
+  --weight-decay W, --wd W
+                        weight decay (default: 1e-4)
+  --print-freq N, -p N  print frequency (default: 10)
+  --resume PATH         path to latest checkpoint (default: none)
+  -e, --evaluate        evaluate model on validation set
+  --model_dir MODEL_DIR, -m MODEL_DIR
+  --train_list TRAIN_LIST
+                        path to training list
+  --valid_list VALID_LIST
+                        path to validation list
+  --test_list TEST_LIST
+                        path to test list
+  --train_landmarksfile TRAIN_LANDMARKSFILE
+                        path to landmarksdictionary
+  --test_landmarksfile TEST_LANDMARKSFILE
+                        path to landmarksdictionary
+  --imagesize IMAGESIZE
+                        image size (default: 224)
+  --end2end END2END     if true, using end2end with dream block, else, using naive architecture
+  --num_classes NUM_CLASSES
+                        number of expressions(class)
+  --num_regions NUM_REGIONS
+                        number of regions(crops)
+
+Scripts for CK+ Masked_images
+
+4 emotions:
+python main_trainer.py --root_path /netpool/work/gpu-3/users/joshini/datasets/Masked_images/CK+/masked_faces --train_list /projects/joshi/projects/Results/MaskedDatasets/CKplus/newckplus_trainList.txt --valid_list /projects/joshi/projects/Results/MaskedDatasets/CKplus/newckplus_validList.txt --test_list /projects/joshi/projects/Results/MaskedDatasets/CKplus/newckplus_testList.txt --train_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/CKplus/new_ckplus_all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/CKplus/new_ckplus_all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_CKplus --epoch 100 -b 10 -b_t 5 --num_classes 4 --title FourEmotions_CKplus_MaskedImages --main_folder /projects/joshi/projects/Results/MaskedDatasets/CKplus/FourEmotions --DB C > /projects/joshi/projects/Results/MaskedDatasets/CKplus/FourEmotions/4M_output.txt
+
+7 emotions:
+python main_trainer.py --root_path /netpool/work/gpu-3/users/joshini/datasets/Masked_images/CK+/masked_faces --train_list /projects/joshi/projects/Results/MaskedDatasets/CKplus/newckplus_trainList.txt --valid_list /projects/joshi/projects/Results/MaskedDatasets/CKplus/newckplus_validList.txt --test_list /projects/joshi/projects/Results/MaskedDatasets/CKplus/newckplus_testList.txt --train_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/CKplus/new_ckplus_all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/CKplus/new_ckplus_all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_CKplus --epoch 100 -b 128 -b_t 25 --DB C --num_classes 7 --title SevenEmotions_CKplus_MaskedImages --main_folder /projects/joshi/projects/Results/MaskedDatasets/CKplus/SevenEmotions > /projects/joshi/projects/Results/MaskedDatasets/CKplus/SevenEmotions/7M_output.txt
+
+Scripts for CK+ Unmasked_images
+
+4 emotions:
+python main_trainer.py --root_path /netpool/work/gpu-3/users/joshini/datasets/Masked_images/CK+/masked_faces --train_list /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/trainList.txt --valid_list /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/validList.txt --test_list /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/testList.txt --train_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/new_all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/new_all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_CKplus --epoch 100 -b 10 -b_t 5 --num_classes 4 --title FourEmotions_CKplus_MaskedImages --main_folder /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/FourEmotions --DB C > /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/FourEmotions/4U_output.txt
+
+7 emotions:
+
+python main_trainer.py --root_path /netpool/work/gpu-3/users/joshini/datasets/CK+\Dataset/CK+/cohn-kanade-images --train_list /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/trainList.txt --valid_list /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/validList.txt --test_list /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/testList.txt --train_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_CKplus --epoch 100 -b 10 -b_t 5 --num_classes 7 --title SevenEmotions_CKplus_UnmaskedImages --main_folder /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/SevenEmotions --DB C > /projects/joshi/projects/Results/UnmaskedDatasets/CKplus/SevenEmotions/7U_output.txt
+
+
+Script for AffectNet Unmasked_images
+
+4 emotions:
+python main_trainer.py --root_path /projects/joshi/datasets/affectnet_kaggle --train_list /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/affectnet_trainList.txt --valid_list /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/affectnet_validList.txt --test_list /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/affectnet_testList.txt --train_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/trainlandmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/testlandmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_affectnet_nidhi --epoch 100 -b 10 -b_t 5 --num_classes 4 --title Unmasked --main_folder /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/FourEmotions --DB A > /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/FourEmotions/output.txt
+
+7 emotions:
+python main_trainer.py --root_path /projects/joshi/datasets/affectnet_kaggle --train_list /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/affectnet_trainList.txt --valid_list /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/affectnet_validList.txt --test_list /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/affectnet_testList.txt --train_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/trainlandmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/testlandmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_affectnet_nidhi --epoch 100 -b 10 -b_t 5 --num_classes 7 --title Unmasked --main_folder /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/SevenEmotions --DB A > /projects/joshi/projects/Results/UnmaskedDatasets/AffectNet/SevenEmotions/output.txt
+
+Script for AffectNet Masked_images
+
+4 emotions:
+
+python main_trainer.py --root_path /projects/joshi/datasets/affectnet_kaggle --train_list /projects/joshi/projects/Results/MaskedDatasets/AffectNet/affectnet_trainList.txt --valid_list /projects/joshi/projects/Results/MaskedDatasets/AffectNet/affectnet_validList.txt --test_list /projects/joshi/projects/Results/MaskedDatasets/AffectNet/affectnet_testList.txt --train_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/AffectNet/trainlandmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/AffectNet/testlandmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_affectnet_nidhi --epoch 100 -b 10 -b_t 5 --num_classes 4 --title Masked --main_folder /projects/joshi/projects/Results/MaskedDatasets/AffectNet/FourEmotions --DB A > /projects/joshi/projects/Results/MaskedDatasets/AffectNet/FourEmotions/4M_output.txt
+
+7 emotions:
+
+python main_trainer.py --root_path /projects/joshi/datasets/affectnet_kaggle --train_list /projects/joshi/projects/Results/MaskedDatasets/AffectNet/affectnet_trainList.txt --valid_list /projects/joshi/projects/Results/MaskedDatasets/AffectNet/affectnet_validList.txt --test_list /projects/joshi/projects/Results/MaskedDatasets/AffectNet/affectnet_testList.txt --train_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/AffectNet/trainlandmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/AffectNet/testlandmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_affectnet_nidhi --epoch 100 -b 10 -b_t 5 --num_classes 7 --title Masked --main_folder /projects/joshi/projects/Results/MaskedDatasets/AffectNet/SevenEmotions --DB A > /projects/joshi/projects/Results/MaskedDatasets/AffectNet/SevenEmotions/7M_output.txt
+
+Script for RAF-DB Unmasked_images
+7 emotions:
+
+python main_trainer.py --root_path /projects/joshi/datasets/RAF-FaceDataset/original --train_list /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/raf_db_trainsList.txt --valid_list /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/raf_db_validList.txt --test_list /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/raf_db_testList.txt --train_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_raf-db --epoch 1 --num_classes 7 -b 10 -b_t 5 --title SevenEmotions_RAFDB_UnmaskedImages --main_folder /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/SevenEmotions --DB R > /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/SevenEmotions/7U_output.txt
+
+4 emotions:
+
+python main_trainer.py --root_path /projects/joshi/datasets/RAF-FaceDataset/original --train_list /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/raf_db_trainsList.txt --valid_list /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/raf_db_validList.txt --test_list /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/raf_db_testList.txt --train_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_raf-db --epoch 1 --num_classes 4 -b 10 -b_t 5 --title FourEmotions_RAFDB_UnmaskedImages --main_folder /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/FourEmotions --DB R > /projects/joshi/projects/Results/UnmaskedDatasets/RAF-DB/FourEmotions/4U_output.txt
+
+Script for RAF-DB Masked_images
+
+4 emotions:
+
+python main_trainer.py --root_path /projects/joshi/datasets/RAF-FaceDataset/original --train_list /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/raf_db_trainsList.txt --valid_list /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/raf_db_validList.txt --test_list /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/raf_db_testList.txt --train_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_raf-db --epoch 1 --num_classes 4 -b 10 -b_t 5 --title FourEmotions_RAFDB_MaskedImages --main_folder /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/FourEmotions --DB R > /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/FourEmotions/4M_output.txt
+
+7 emotions:
+
+python main_trainer.py --root_path /projects/joshi/datasets/RAF-FaceDataset/original --train_list /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/raf_db_trainsList.txt --valid_list /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/raf_db_validList.txt --test_list /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/raf_db_testList.txt --train_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/all_landmarksfile.pkl --test_landmarksfile /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/all_landmarksfile.pkl -j 16 --model_dir /projects/joshi/projects/checkpoint_raf-db --epoch 1 --num_classes 7 -b 10 -b_t 5 --title SevenEmotions_RAFDB_MaskedImages --main_folder /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/SevenEmotions --DB R > /projects/joshi/projects/Results/MaskedDatasets/RAF-DB/SevenEmotions/7M_output.txt
+
+
