@@ -14,7 +14,7 @@ optional arguments:
   -h, --help            show this help message and exit
   --root_path ROOT_PATH
                         path to root path of images
-  --DB DB               Which Database for train. (Flatcam, FERPLUS)
+  --DB DB               Which Database for train. (JAFFE,CK+, AffectNet)
   --main_folder MAIN_FOLDER
                         where to save the docs
   --title TITLE         title for the graph
